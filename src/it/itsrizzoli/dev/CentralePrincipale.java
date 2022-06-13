@@ -30,11 +30,10 @@ public class CentralePrincipale {
         while (true) {
 
             try {
-                dataContent = "CP [<" + dtf.format(LocalDateTime.now()) + ">]: POLL CL09";
                 dp = new DatagramPacket(dataContent.getBytes(), dataContent.length(), srvIp, remotePort);
 
                 DataSender.send(dp);
-                TimeUnit.SECONDS.sleep(2);
+                TimeUnit.SECONDS.sleep(60);
             } catch (InterruptedException e) {
                 e.printStackTrace();
                 DataSender.close();
